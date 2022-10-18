@@ -1,7 +1,7 @@
 const {Diet, Recipe} = require("../db.js")
 require("dotenv").config();
 const {API_KEY, GET_URL} = process.env;
-const {v4:uuid} = require("UUID");
+const {v4: uuidv4} = require("uuid");
 const axios = require("axios");
 const db = require("../db");
 
@@ -93,7 +93,7 @@ const getById = async (req, res) => {
  const postRecipes = async (req, res) => {
     try {
          const {title, summary, healthScore, steps, diets, image} = req.body;
-         const id = uuid();
+         const id = uuidv4();
          const newRecipe = await Recipe.create({
             id: id,
             title: title,
