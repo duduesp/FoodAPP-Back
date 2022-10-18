@@ -1,5 +1,6 @@
-const {Diet, Recipe} = require("../db.js")
+
 require("dotenv").config();
+const {Diet, Recipe} = require("../db.js")
 const {API_KEY, GET_URL} = process.env;
 const {v4: uuidv4} = require("uuid");
 const axios = require("axios");

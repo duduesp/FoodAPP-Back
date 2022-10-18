@@ -1,8 +1,6 @@
 const { Diet, Recipe } = require("../db");
 require("dotenv").config();
 const axios = require("axios");
-// const {v4:uuid} = require("UUID");
-
 const {v4: uuidv4} = require("uuid");
 
 
