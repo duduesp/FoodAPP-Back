@@ -1,7 +1,8 @@
 const { Diet, Recipe } = require("../db");
 require("dotenv").config();
 const axios = require("axios");
-const {v4:uuid} = require("UUID");
+// const {v4:uuid} = require("UUID");
+import { v4 as uuidv4 } from "uuid";
 
 // const dietType = [
 //     {name:'gluten free'}, 
@@ -35,7 +36,7 @@ const getDiets = async (req, res) => {
                 {name:'fodmap friendly'},
                 {name:'vegetarian'}
                 ];
-            dietsApi.map(d => {const id = uuid(); Diet.create({id: id, name: d.name})})
+            dietsApi.map(d => {const id = uuidv4(); Diet.create({id: id, name: d.name})})
             res.send(dietList)
         }
     } catch (e) {
